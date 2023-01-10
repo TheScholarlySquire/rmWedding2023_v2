@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <script src="./wedding-guest-list.js"></script> -->
+        <!-- bootstrap start -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <!--bootstrap end-->
+        <script src="https://use.fontawesome.com/36eb598a5a.js"></script>
+        <script src="./main.js"></script>
+        <title>Our Wedding</title>
+    </head>
+    <body>
+        <form id="rsvp-form" class="rsvp-form gform" action="https://script.google.com/macros/s/AKfycbxMh3ZDy69d8o84qDqMwGGXAMc5d0qwlu-cq8183fYdK5Ub7pwKjPh94BwTTzou-Rxf/exec" method="POST">
+            <div class="row">
+                <div class="col-md-2 col-sm-2">
+                    <div class="form-input-group">
+                        <i class="fa fa-envelope"></i>
+                        <input type="email" name="email" class="" placeholder="Your email" required>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2">
+                    <div class="form-input-group">
+                        <i class="fa fa-user"></i>
+                        <input name="name" class="" placeholder="Your name" required>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2">
+                    <div class="form-input-group">
+                        <label><i class="fa fa-check">Will you be joining us?</i></label><br>
+                        <input type="radio" name="rsvp_status" value="yes" onclick="showGuestInput()">
+                        <label>Yes</label><br>
+                        <input type="radio" name="rsvp_status" value="no" onclick="hideGuestInput()">
+                        <label>No</label>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2">
+                    <div class="form-input-group">
+                        <i class="fa fa-key"></i>
+                        <input type="number" name="invite_code" id="invite_code" class="" min="0" placeholder="Invite code" required>
+                    </div>
+                </div>
+            </div>
+            <div id="guest_input" class="row" style="display:none;">
+                <div class="col-md-4 col-sm-4">
+                    <div class="form-input-group">
+                        <label><i class="fa fa-users">Are you bringing a plus-one to the wedding?</i></label><br>
+                        <input type="radio" name="add_guest" value="yes" onclick="showTextInput()">Yes<br>
+                        <input type="radio" name="add_guest" value="no" onclick="hideTextInput()">No<br>
+                        <div id="plus_one" style="display:none;">
+                            <label>Please enter your plus-one's name:</label><br>
+                            <input type="text" name="plus_one"><br>
+                        </div>
+                        <!--<input type="number" name="plus_one" class="" value="0" min="0" max="4" required>-->
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12" id="alert-wrapper"></div>
+            </div>
+            <button class="btn-fill rsvp-btn">
+                Yes, that's me!
+            </button>
+        </form>
+    </body>
+</html>
