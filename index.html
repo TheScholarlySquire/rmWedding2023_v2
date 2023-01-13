@@ -8,62 +8,107 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/add-to-calendar-button@1/assets/css/atcb.min.css">
         <!--bootstrap end-->
         <script src="https://use.fontawesome.com/36eb598a5a.js"></script>
-        <script src="./main.js"></script>
+        <script type="text/javascript" src="./main.js"></script>
         <title>Our Wedding</title>
     </head>
     <body>
-        <form id="rsvp-form" class="rsvp-form gform" action="https://script.google.com/macros/s/AKfycbxMh3ZDy69d8o84qDqMwGGXAMc5d0qwlu-cq8183fYdK5Ub7pwKjPh94BwTTzou-Rxf/exec" method="POST">
-            <div class="row">
-                <div class="col-md-2 col-sm-2">
-                    <div class="form-input-group">
-                        <i class="fa fa-envelope"></i>
-                        <input type="email" name="email" class="" placeholder="Your email" required>
-                    </div>
-                </div>
-                <div class="col-md-2 col-sm-2">
-                    <div class="form-input-group">
-                        <i class="fa fa-user"></i>
-                        <input name="name" class="" placeholder="Your name" required>
-                    </div>
-                </div>
-                <div class="col-md-2 col-sm-2">
-                    <div class="form-input-group">
-                        <label><i class="fa fa-check">Will you be joining us?</i></label><br>
-                        <input type="radio" name="rsvp_status" value="yes" onclick="showGuestInput()">
-                        <label>Yes</label><br>
-                        <input type="radio" name="rsvp_status" value="no" onclick="hideGuestInput()">
-                        <label>No</label>
-                    </div>
-                </div>
-                <div class="col-md-2 col-sm-2">
-                    <div class="form-input-group">
-                        <i class="fa fa-key"></i>
-                        <input type="number" name="invite_code" id="invite_code" class="" min="0" placeholder="Invite code" required>
+
+        <section class="rsvp text-center" id="rsvp">
+            <div class="container">
+                <div>
+                    <div>
+                        <h3>What are you waiting for?</h3>
+                        <p>We would greatly appreciate if you could RSVP before the wedding</p>
+                        <form id="rsvp-form" class="rsvp-form gform" action="https://script.google.com/macros/s/AKfycbxMh3ZDy69d8o84qDqMwGGXAMc5d0qwlu-cq8183fYdK5Ub7pwKjPh94BwTTzou-Rxf/exec" method="POST">
+                            <div>
+                                <div>
+                                    <div class="form-input-group">
+                                        <i class="fa fa-envelope"></i>
+                                        <input type="email" name="email" class="" placeholder="Your email" required>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="form-input-group">
+                                        <i class="fa fa-user"></i>
+                                        <input name="name" class="" placeholder="Your name" required>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="form-input-group">
+                                        <label><i class="fa fa-check">Will you be joining us?</i></label><br>
+                                        <input type="radio" name="rsvp_status" value="yes" onclick="showGuestInput()">
+                                        <label>Yes</label><br>
+                                        <input type="radio" name="rsvp_status" value="no" onclick="hideGuestInput()">
+                                        <label>No</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="form-input-group">
+                                        <i class="fa fa-key"></i>
+                                        <input type="number" name="invite_code" id="invite_code" class="" min="0" placeholder="Invite code" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="guest_input" style="display:none;">
+                                <div>
+                                    <div class="form-input-group">
+                                        <label><i class="fa fa-users">Are you bringing a plus-one to the wedding?</i></label><br>
+                                        <input type="radio" name="add_guest" value="yes" onclick="showTextInput()">Yes<br>
+                                        <input type="radio" name="add_guest" value="no" onclick="hideTextInput()">No<br>
+                                        <div id="plus_one" style="display:none;">
+                                            <label>Please enter your plus-one's name:</label><br>
+                                            <input type="text" name="plus_one"><br>
+                                        </div>
+                                        <!--<input type="number" name="plus_one" class="" value="0" min="0" max="4" required>-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div id="alert-wrapper"></div>
+                            </div>
+                            <button class="btn-fill rsvp-btn">
+                                Yes, that's me!
+                            </button>
+
+                            <div style="display:none;" class="thankyou_message">
+                                <h2><em>Thank you</em> for RSVPing! We're excited to see you there!</h2>
+                                <div class="atcb" style="display:none;">
+                                {
+                                  "name":"Max + Ray wedding",
+                                  "description":"Max and Ray are getting married at Graydon Hall Manor!<br>→ [url]https://github.com/add2cal/add-to-calendar-button[/url]",
+                                  "startDate":"2023-06-23",
+                                  "endDate":"2023-06-23",
+                                  "startTime":"10:00",
+                                  "endTime":"17:00",
+                                  "location":"185 Graydon Hall Dr, North York, ON M3A 3B1, Canada",
+                                  "label":"Add to calendar!",
+                                  "options":[
+                                    "Apple",
+                                    "Google",
+                                    "iCal",
+                                    "Microsoft365",
+                                    "MicrosoftTeams",
+                                    "Outlook.com",
+                                    "Yahoo"
+                                  ],
+                                  "timeZone":"America/Toronto",
+                                  "inline":true,
+                                  "trigger":"click"
+                                }
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-            <div id="guest_input" class="row" style="display:none;">
-                <div class="col-md-4 col-sm-4">
-                    <div class="form-input-group">
-                        <label><i class="fa fa-users">Are you bringing a plus-one to the wedding?</i></label><br>
-                        <input type="radio" name="add_guest" value="yes" onclick="showTextInput()">Yes<br>
-                        <input type="radio" name="add_guest" value="no" onclick="hideTextInput()">No<br>
-                        <div id="plus_one" style="display:none;">
-                            <label>Please enter your plus-one's name:</label><br>
-                            <input type="text" name="plus_one"><br>
-                        </div>
-                        <!--<input type="number" name="plus_one" class="" value="0" min="0" max="4" required>-->
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12" id="alert-wrapper"></div>
-            </div>
-            <button class="btn-fill rsvp-btn">
-                Yes, that's me!
-            </button>
-        </form>
+        </section>
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11525.69963757429!2d-79.3428065!3d43.7640378!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x181a5dc4dfb9758d!2sGraydon%20Hall%20Manor!5e0!3m2!1sen!2suk!4v1673638529105!5m2!1sen!2suk" width="1200" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <script data-cfasync="false" type="text/javascript" src="./form-submission-handler.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/add-to-calendar-button@1" async defer></script>
     </body>
 </html>
