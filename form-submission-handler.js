@@ -102,4 +102,18 @@
       buttons[i].disabled = true;
     }
   }
+
+    const form = document.getElementById("rsvp-form");
+    const formIntro = document.getElementById("form-intro");
+    const formSubmit = document.getElementById("rsvp-submit");
+    const formInner = document.getElementById("form-inputs");
+    const thankYou = document.getElementById("ty-msg");
+
+    $(document).ready(function() {
+        $(form).submit(function(e) {
+              $(formInner).hide();
+              $(formIntro).hide();
+              $(formSubmit).hide();
+          })
+      });
 })();
