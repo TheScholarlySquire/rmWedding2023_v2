@@ -4,19 +4,26 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- <script src="./wedding-guest-list.js"></script> -->
+
+        <link rel="stylesheet" type="text/css" href="./main.css" />
         <!-- bootstrap start -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/add-to-calendar-button@1/assets/css/atcb.min.css">
-        <!-- <link rel="stylesheet" type="text/css" href="modal.css" /> -->
-
         <!--bootstrap end-->
         <script src="https://use.fontawesome.com/36eb598a5a.js"></script>
-        <script type="text/javascript" src="./main.js"></script>
         <title>Our Wedding</title>
     </head>
     <body>
+        <div class="hero-nav">
+            <div class="hero-nav__inner">
+                <h1>Max + Ray</h1>
+                <div class="hero-nav__button">
+                    <a href="#" class="btn"></a>
+                </div>
+            </div>
+        </div>
 
         <section class="rsvp text-center" id="rsvp">
             <div class="container">
@@ -28,64 +35,59 @@
                         </div>
                         <form id="rsvp-form" class="rsvp-form gform" action="https://script.google.com/macros/s/AKfycbyA3BT-sOlqLxo-dikmukURctv8Sz7F8Z9dqHVQO5PQLYATX5h-_NBT58EPT1_hBy16dQ/exec" method="POST" data-email="example@email.net">
                             <div id="form-inputs">
-                                <div>
+                                <fieldset>
                                     <div>
-                                        <div class="form-input-group">
+                                        <div class="form-input-group text-input">
                                             <i class="fa fa-envelope"></i>
                                             <input type="email" name="email" class="" placeholder="Your email" required>
                                         </div>
                                     </div>
                                     <div>
-                                        <div class="form-input-group">
+                                        <div class="form-input-group text-input">
                                             <i class="fa fa-user"></i>
                                             <input name="name" class="" placeholder="Your name" required>
                                         </div>
                                     </div>
                                     <div>
                                         <div class="form-input-group">
-                                            <label><i class="fa fa-check">Will you be joining us?</i></label><br>
+                                            <label style="font-family: 'Montserrat', sans-serif;">Will you be joining us?</label><br>
                                             <input type="radio" name="rsvp_status" value="yes" onclick="showGuestInput()">
-                                            <label>Yes</label><br>
+                                            <label style="font-family: 'Montserrat', sans-serif;">Yes</label><br>
                                             <input type="radio" name="rsvp_status" value="no" onclick="hideGuestInput()">
-                                            <label>No</label>
+                                            <label style="font-family: 'Montserrat', sans-serif;">No</label>
                                         </div>
                                     </div>
-                                    <!-- <div>
-                                        <div class="form-input-group">
-                                            <i class="fa fa-key"></i>
-                                            <input type="number" name="invite_code" id="invite_code" class="" min="0" placeholder="Invite code" required>
-                                        </div>
-                                    </div> -->
-                                </div>
-                                <div id="guest_input" style="display:none;">
+                                </fieldset>
+                                <fieldset id="guest_input" style="display:none;">
                                     <div>
                                         <div class="form-input-group">
-                                            <label><i class="fa fa-users">Are you bringing a plus-one to the wedding?</i></label><br>
+                                            <label style="font-family: 'Montserrat', sans-serif;"><i class="fa fa-users"></i>Are you bringing a plus-one to the wedding?</label><br>
                                             <input type="radio" name="add_guest" value="yes" onclick="showTextInput()">Yes<br>
                                             <input type="radio" name="add_guest" value="no" onclick="hideTextInput()">No<br>
-                                            <div id="plus_one" style="display:none;">
-                                                <label>Please enter your plus-one's name:</label><br>
+                                            <div id="plus_one"  class="text-input" style="display:none;">
+                                                <label style="font-family: 'Montserrat', sans-serif;">Please enter your plus-one's name:</label><br>
                                                 <input type="text" name="plus_one"><br>
                                             </div>
                                             <!--<input type="number" name="plus_one" class="" value="0" min="0" max="4" required>-->
                                         </div>
                                     </div>
-                                </div>
+                                </fieldset>
                             </div>
                             <button id="rsvp-submit" class="btn-fill rsvp-btn">
                                 Submit
                             </button>
 
-                            <div style="display:none;" id="ty-msg" class="thankyou_message">
-                                <h2><em>Thank you</em> for letting us know!</h2>
+                            <div id="submit-loading" class='loading-box' style="display:none;">
+                                <div class='loading-container'>
+                                    <span class='circle'></span>
+                                    <span class='circle'></span>
+                                    <span class='circle'></span>
+                                    <span class='circle'></span>
+                                </div>
                             </div>
 
-                            <div class="flex align-center align-vert modal modal--align">
-                                <div class="modal__container">
-                                    <a class="modal__close modal__close--x" aria-hidden="true">&#x2715;</a>
-                                    <p>Although we have an 'X' to close we should always have a button/link to cancel the modal</p>
-                                    <button class="modal__close">Cancel link</button>
-                                </div>
+                            <div style="display:none;" id="ty-msg" class="thankyou_message">
+                                <h2><em>Thank you</em> for letting us know!</h2>
                             </div>
 
                         </form>
@@ -119,6 +121,7 @@
         </div>
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11525.69963757429!2d-79.3428065!3d43.7640378!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x181a5dc4dfb9758d!2sGraydon%20Hall%20Manor!5e0!3m2!1sen!2suk!4v1673638529105!5m2!1sen!2suk" width="1200" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
+        <script type="text/javascript" src="./main.js"></script>
         <script data-cfasync="false" type="text/javascript" src="./form-submission-handler.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/add-to-calendar-button@1" async defer></script>
     </body>

@@ -1,6 +1,6 @@
 (function() {
   // get all data in form and return object
-  function getFormData(form) {
+    function getFormData(form) {
     var elements = form.elements;
     var honeypot;
 
@@ -50,7 +50,7 @@
     return {data: formData, honeypot: honeypot};
   }
 
-  function handleFormSubmit(event) {  // handles form submit without any jquery
+    function handleFormSubmit(event) {  // handles form submit without any jquery
     event.preventDefault();           // we are submitting via xhr below
     var form = event.target;
     var formData = getFormData(form);
@@ -71,12 +71,14 @@
         if (xhr.readyState === 4 && xhr.status === 200) {
           form.reset();
           var formElements = form.querySelector(".form-elements")
+          var submitLoading = document.getElementById("submit-loading");
           if (formElements) {
             formElements.style.display = "none"; // hide form
           }
           var thankYouMessage = form.querySelector(".thankyou_message");
           if (thankYouMessage) {
             thankYouMessage.style.display = "block";
+            submitLoading.style.display = "none" //hide loading
           }
         }
     };
@@ -87,33 +89,34 @@
     xhr.send(encoded);
   }
 
-  function loaded() {
-    // bind to the submit event of our form
-    var forms = document.querySelectorAll("form.gform");
-    for (var i = 0; i < forms.length; i++) {
-      forms[i].addEventListener("submit", handleFormSubmit, false);
-    }
-  };
-  document.addEventListener("DOMContentLoaded", loaded, false);
+    function loaded() {
+        // bind to the submit event of our form
+        var forms = document.querySelectorAll("form.gform");
+        for (var i = 0; i < forms.length; i++) {
+          forms[i].addEventListener("submit", handleFormSubmit, false);
+        }
+    };
 
-  function disableAllButtons(form) {
-    var buttons = form.querySelectorAll("button");
-    for (var i = 0; i < buttons.length; i++) {
-      buttons[i].disabled = true;
+    document.addEventListener("DOMContentLoaded", loaded, false);
+
+    function disableAllButtons(form) {
+        var buttons = form.querySelectorAll("button");
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].disabled = true;
+        }
     }
-  }
 
     const form = document.getElementById("rsvp-form");
     const formIntro = document.getElementById("form-intro");
-    const formSubmit = document.getElementById("rsvp-submit");
     const formInner = document.getElementById("form-inputs");
+    const formSubmit = document.getElementById("rsvp-submit");
+    const submitLoading = document.getElementById("submit-loading");
     const thankYou = document.getElementById("ty-msg");
 
-    $(document).ready(function() {
-        $(form).submit(function(e) {
-              $(formInner).hide();
-              $(formIntro).hide();
-              $(formSubmit).hide();
-          })
-      });
+    $(form).submit(function(e) {
+        $(submitLoading).show();
+        $(formInner).hide();
+        $(formIntro).hide();
+        $(formSubmit).hide();
+    });
 })();
