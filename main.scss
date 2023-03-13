@@ -7,6 +7,11 @@
 body,html{
     margin: 0;
     padding: 0;
+    p, h1, h2, h3, a {
+        font-family: 'Montserrat', sans-serif;
+    }
+}
+#page-body {
     background-color: #efefef;
 }
 
@@ -22,18 +27,18 @@ body,html{
     width:100%;
     max-height: 400px;
     min-height: 105px;
-    background-image: url(./img/eng-gh1.jpg);
+    background-image: url(./img/eng-walking1.jpg);
     background-color: #464646;
     background-blend-mode: overlay;
     background-size: cover;
-    background-position: calc(50% - 8px) 80%;
+    background-position: calc(50% - 8px) 57%;
     overflow: hidden;
     .hero-nav__inner{
         z-index: 1;
     }
     h1{
         color: #efefef;
-        font-size: 4.5vw;
+        font-size: 70px;
         font-family: 'Mea Culpa', cursive;
     }
     &:before{
@@ -48,7 +53,32 @@ body,html{
     }
     &.fixme{
         &:before{
-            background: rgba(#000, 0.8);
+            background: #e49090;
+        }
+    }
+}
+#date-place {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10% 2%;
+    font-size: 40px;
+    height: 55vh;
+    div:nth-of-type(1) {
+        padding-right: 30px;
+        border-right: 2px solid #464646;
+    }
+    div:nth-of-type(2) {
+        padding-left: 30px;
+        border-left: 2px solid #464646;
+    }
+    div > a {
+        text-decoration: none;
+        color: #464646;
+        transition: 0.3s ease-in-out;
+        &:hover {
+            color:#010101;
+            letter-spacing:0.2px;
         }
     }
 }
@@ -74,7 +104,7 @@ body,html{
     width: 15px;
 }
 .text-input input {
-    width: 500px;
+    width: 75%;
     margin: 5px;
 }
 
@@ -134,3 +164,61 @@ body,html{
   to {transform: translateX(45px)}
 }
 /**LOADING ANIMATION**/
+
+#gh-map {
+    display: flex;
+    justify-content: center;
+    iframe {
+        height: 45vh;
+        margin: 0 0 50px 0;
+        border-radius: 10px;
+        border: 1px solid #464646;
+    }
+}
+footer {
+    background-color: #464646;
+    color: #f1f1f1;
+    #footer-container-outer {
+        display: flex;
+        justify-content: center;
+    }
+    #footer-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 80%;
+    }
+    #footer-info {
+        width: 25%;
+        margin-bottom: 20px;
+    }
+    #footer-contact {
+        h2 {
+            margin: 0 0 10px 0;
+        }
+        height: 100%;
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media only screen and (max-width: 600px) {
+    #date-place {
+        font-size: 25px;
+        padding: 5%;
+        div:nth-of-type(1) {
+            text-align: right;
+        }
+    }
+    #footer-container {
+        width: 100%;
+        flex-direction: column;
+        margin-bottom: 25px;
+    }
+    #footer-container > div {
+        width: 100%;
+    }
+    #add-cal {
+        text-align: center;
+    }
+}

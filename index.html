@@ -15,7 +15,7 @@
         <script src="https://use.fontawesome.com/36eb598a5a.js"></script>
         <title>Our Wedding</title>
     </head>
-    <body>
+    <body id="page-body">
         <div class="hero-nav">
             <div class="hero-nav__inner">
                 <h1>Max + Ray</h1>
@@ -24,6 +24,11 @@
                 </div>
             </div>
         </div>
+
+        <section id="date-place">
+            <div><a href="#rsvp">Saturday June 24</a></div>
+            <div><a href="#gh-map">Graydon Hall Manor</a></div>
+        </section>
 
         <section class="rsvp text-center" id="rsvp">
             <div class="container">
@@ -61,15 +66,22 @@
                                 <fieldset id="guest_input" style="display:none;">
                                     <div>
                                         <div class="form-input-group">
+                                            <label style="font-family: 'Montserrat', sans-serif;"><i class="fa fa-users"></i>What's got you drooling?</label><br>
+                                            <input type="radio" name="food_choice" value="beef" onclick="showTextInput()">Meat<br>
+                                            <input type="radio" name="food_choice" value="chicken" onclick="hideTextInput()">More meat<br>
+                                            <input type="radio" name="food_choice" value="vegan" onclick="hideTextInput()">Even more meat? That's entirely too much meat!<br>
+                                            <p>For any dietary restrictions, please reach out to us at <a href="mailto:#">email@example.com</a></p>
+                                        </div>
+                                        <!-- <div class="form-input-group">
                                             <label style="font-family: 'Montserrat', sans-serif;"><i class="fa fa-users"></i>Are you bringing a plus-one to the wedding?</label><br>
                                             <input type="radio" name="add_guest" value="yes" onclick="showTextInput()">Yes<br>
                                             <input type="radio" name="add_guest" value="no" onclick="hideTextInput()">No<br>
                                             <div id="plus_one"  class="text-input" style="display:none;">
                                                 <label style="font-family: 'Montserrat', sans-serif;">Please enter your plus-one's name:</label><br>
                                                 <input type="text" name="plus_one"><br>
-                                            </div>
+                                            </div> -->
                                             <!--<input type="number" name="plus_one" class="" value="0" min="0" max="4" required>-->
-                                        </div>
+                                        <!-- </div> -->
                                     </div>
                                 </fieldset>
                             </div>
@@ -95,31 +107,60 @@
                 </div>
             </div>
         </section>
-        <div class="atcb">
-        {
-          "name":"Max + Ray wedding",
-          "description":"Max and Ray are getting married at Graydon Hall Manor!<br>→ [url]https://github.com/add2cal/add-to-calendar-button[/url]",
-          "startDate":"2023-06-23",
-          "endDate":"2023-06-23",
-          "startTime":"10:00",
-          "endTime":"17:00",
-          "location":"185 Graydon Hall Dr, North York, ON M3A 3B1, Canada",
-          "label":"Add to calendar!",
-          "options":[
-            "Apple",
-            "Google",
-            "iCal",
-            "Microsoft365",
-            "MicrosoftTeams",
-            "Outlook.com",
-            "Yahoo"
-          ],
-          "timeZone":"America/Toronto",
-          "inline":true,
-          "trigger":"click"
-        }
-        </div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11525.69963757429!2d-79.3428065!3d43.7640378!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x181a5dc4dfb9758d!2sGraydon%20Hall%20Manor!5e0!3m2!1sen!2suk!4v1673638529105!5m2!1sen!2suk" width="1200" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <section id="gh-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11525.69963757429!2d-79.3428065!3d43.7640378!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x181a5dc4dfb9758d!2sGraydon%20Hall%20Manor!5e0!3m2!1sen!2suk!4v1673638529105!5m2!1sen!2suk" width="1200" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+
+        <footer>
+            <div id="footer-container-outer">
+                <div id="footer-container">
+                    <div id="add-cal" class="atcb">
+                    {
+                      "name":"Max + Ray wedding",
+                      "description":"Max and Ray are getting married at Graydon Hall Manor!<br>Arrive at 10:00<br>Ceremony at: 10:30",
+                      "startDate":"2023-06-24",
+                      "endDate":"2023-06-24",
+                      "startTime":"10:00",
+                      "endTime":"17:00",
+                      "location":"185 Graydon Hall Dr, North York, ON M3A 3B1, Canada",
+                      "label":"Add to calendar!",
+                      "options":[
+                        "Apple",
+                        "Google",
+                        "iCal",
+                        "Microsoft365",
+                        "MicrosoftTeams",
+                        "Outlook.com",
+                        "Yahoo"
+                      ],
+                      "timeZone":"America/Toronto",
+                      "inline":true,
+                      "trigger":"click"
+                    }
+                    </div>
+
+                    <div id="footer-info">
+                        <div>
+                            <h2>Here is some info</h2>
+                            <ul>
+                                <li>10:00 guest arrival</li>
+                                <li>10:30 ceremony begins</li>
+                                <li>11:00 hors d'oeuvres and cocktails</li>
+                                <li>12:00 lunch is served</li>
+                                <li>15:00 wrap-up at Graydon Hall</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="footer-contact">
+                        <h2>If something's wrong<br>bother these guys:</h2>
+                        <div>Best man: Cam Anderson</div>
+                        <dov>Maid of Honour: Rosanne Michel</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
         <script type="text/javascript" src="./main.js"></script>
         <script data-cfasync="false" type="text/javascript" src="./form-submission-handler.js"></script>
