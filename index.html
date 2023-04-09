@@ -19,9 +19,6 @@
         <div class="hero-nav">
             <div class="hero-nav__inner">
                 <h1>Max + Ray</h1>
-                <div class="hero-nav__button">
-                    <a href="#" class="btn"></a>
-                </div>
             </div>
         </div>
 
@@ -36,7 +33,7 @@
                     <div>
                         <div id="form-intro">
                             <h3>What are you waiting for?</h3>
-                            <p>We would greatly appreciate if you could RSVP before the wedding</p>
+                            <p>We would greatly appreciate if you could RSVP before the end of May</p>
                         </div>
                         <form id="rsvp-form" class="rsvp-form gform" action="https://script.google.com/macros/s/AKfycbyA3BT-sOlqLxo-dikmukURctv8Sz7F8Z9dqHVQO5PQLYATX5h-_NBT58EPT1_hBy16dQ/exec" method="POST" data-email="example@email.net">
                             <div id="form-inputs">
@@ -54,22 +51,36 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <div class="form-input-group">
-                                            <label style="font-family: 'Montserrat', sans-serif;">Will you be joining us?</label><br>
-                                            <input type="radio" name="rsvp_status" value="yes" onclick="showGuestInput()">
-                                            <label style="font-family: 'Montserrat', sans-serif;">Yes</label><br>
-                                            <input type="radio" name="rsvp_status" value="no" onclick="hideGuestInput()">
-                                            <label style="font-family: 'Montserrat', sans-serif;">No</label>
+                                        <div id="main-response" class="form-input-group">
+                                            <h4 style="font-family: 'Montserrat', sans-serif;">Will you be joining us?</h4><br>
+                                            <div>
+                                                <div>
+                                                    <label><input type="radio" name="rsvp_status" value="yes" onclick="showGuestInput()">Yes</label><br>
+                                                    <label><input type="radio" name="rsvp_status" value="no" onclick="hideGuestInput()">No</label>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </fieldset>
                                 <fieldset id="guest_input" style="display:none;">
                                     <div>
                                         <div class="form-input-group">
-                                            <label style="font-family: 'Montserrat', sans-serif;"><i class="fa fa-users"></i>What's got you drooling?</label><br>
-                                            <input type="radio" name="food_choice" value="beef" onclick="showTextInput()">Meat<br>
-                                            <input type="radio" name="food_choice" value="chicken" onclick="hideTextInput()">More meat<br>
-                                            <input type="radio" name="food_choice" value="vegan" onclick="hideTextInput()">Even more meat? That's entirely too much meat!<br>
+                                            <div>
+                                                <h4>Which main course would you like?</h4><br>
+                                                <div>
+                                                    <label><input type="radio" name="food_choice" value="chicken" onclick="showTextInput()"><h5>Chicken</h5><br> roasted breast and leg terrine, asparagus, grilled romaine heart, madeira jus</label>
+                                                    <label><input type="radio" name="food_choice" value="beef" onclick="hideTextInput()"><h5>Beef</h5><br> braised beef shortrip, sweet potato gratin, broccolini, cippolini onion, red wine jus</label>
+                                                    <label><input type="radio" name="food_choice" value="vegan" onclick="hideTextInput()"><h5>Vegan</h5><br> brown rice bowl, shitake, avocado, pickled carrots, edamame, sesame-ginger vinaigrette</label>
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <h4>Which dessert?</h4>
+                                                <div>
+                                                    <label><input type="radio" name="dessert_choice" value="tart" onclick="showTextInput()"><h5>Raspberry and rose tart</h5><br> rose cream, raspberry coulis, pistachio crème anglais, lychee</label>
+                                                    <label><input type="radio" name="dessert_choice" value="sorbet" onclick="showTextInput()"><h5>Raspberry sorbet</h5><br> </label>
+                                                </div>
+                                            </div>
                                             <p>For any dietary restrictions, please reach out to us at <a href="mailto:#">email@example.com</a></p>
                                         </div>
                                         <!-- <div class="form-input-group">
@@ -118,7 +129,7 @@
                     <div id="add-cal" class="atcb">
                     {
                       "name":"Max + Ray wedding",
-                      "description":"Max and Ray are getting married at Graydon Hall Manor!<br>Arrive at 10:00<br>Ceremony at: 10:30",
+                      "description":"Max and Ray are getting married at Graydon Hall Manor!<br>10:00 guest arrival<br>10:30 ceremony begins<br>11:00 hors d'oeuvres and cocktails<br>12:00 lunch is served<br>15:00 wrap-up at Graydon Hall<br>16:00 afterparty starts at 620 Ridgemount Crescent (Mississauga)",
                       "startDate":"2023-06-24",
                       "endDate":"2023-06-24",
                       "startTime":"10:00",
@@ -142,13 +153,14 @@
 
                     <div id="footer-info">
                         <div>
-                            <h2>Here is some info</h2>
+                            <h2>What to expect for the day</h2>
                             <ul>
                                 <li>10:00 guest arrival</li>
                                 <li>10:30 ceremony begins</li>
                                 <li>11:00 hors d'oeuvres and cocktails</li>
                                 <li>12:00 lunch is served</li>
                                 <li>15:00 wrap-up at Graydon Hall</li>
+                                <li>16:00 afterparty starts at <a href="https://goo.gl/maps/cwMZwPnLyKdHnFas7">620 Ridgemount Crescent</a> (Mississauga)</li>
                             </ul>
                         </div>
                     </div>
