@@ -35,7 +35,7 @@ body p, body h1, body h2, body h3, body h4, body h5, body label, body a, html p,
   width: 100%;
   max-height: 400px;
   min-height: 105px;
-  background-image: url(./img/eng-walking1.jpg);
+  background-image: url(./img/eng-sunset1.jpg);
   background-color: #464646;
   background-blend-mode: overlay;
   background-size: cover;
@@ -107,6 +107,11 @@ body p, body h1, body h2, body h3, body h4, body h5, body label, body a, html p,
   padding: 2%;
   margin: 2% 0;
   transition: 0.5s ease-in-out;
+}
+#form-inputs .vegan {
+  color: #12a200;
+  font-style: italic;
+  margin-right: 10px;
 }
 
 .text-input i {
@@ -270,14 +275,21 @@ body p, body h1, body h2, body h3, body h4, body h5, body label, body a, html p,
 }
 #gh-map iframe {
   height: 45vh;
-  margin: 0 0 50px 0;
+  margin: 0;
   border-radius: 10px;
   border: 1px solid #464646;
+}
+
+#ap-info {
+  padding: 2.5% 5%;
 }
 
 footer {
   background-color: #464646;
   color: #f1f1f1;
+}
+footer h2 {
+  font-size: 25px;
 }
 footer #footer-container-outer {
   display: flex;
@@ -304,6 +316,13 @@ footer #footer-info a:hover {
   color: black;
   background-color: #f1f1f1;
 }
+footer #footer-info ul {
+  border: 1px solid #f1f1f1;
+  padding: 5px;
+  border-radius: 8px;
+  margin: 5px 0;
+  list-style: none;
+}
 footer #footer-contact {
   height: 100%;
   padding-top: 20px;
@@ -312,6 +331,16 @@ footer #footer-contact {
 }
 footer #footer-contact h2 {
   margin: 0 0 10px 0;
+}
+footer #footer-contact a {
+  color: #f1f1f1;
+  text-decoration: underline;
+}
+footer #footer-contact div {
+  border: 1px solid #f1f1f1;
+  padding: 5px;
+  border-radius: 8px;
+  margin: 5px 0;
 }
 
 @media only screen and (max-width: 600px) {
@@ -324,6 +353,7 @@ footer #footer-contact h2 {
   }
   #guest_input .form-input-group > div div {
     flex-direction: column;
+    margin-top: 0;
   }
   #guest_input .form-input-group > div div label {
     width: 100%;

@@ -40,7 +40,7 @@ body,html{
     width:100%;
     max-height: 400px;
     min-height: 105px;
-    background-image: url(./img/eng-walking1.jpg);
+    background-image: url(./img/eng-sunset1.jpg);
     background-color: #464646;
     background-blend-mode: overlay;
     background-size: cover;
@@ -112,6 +112,11 @@ body,html{
     padding: 2%;
     margin: 2% 0;
     transition: 0.5s ease-in-out;
+    .vegan {
+        color: #12a200;
+        font-style: italic;
+        margin-right: 10px;
+    }
 }
 .text-input i {
     width: 15px;
@@ -269,12 +274,18 @@ body,html{
     justify-content: center;
     iframe {
         height: 45vh;
-        margin: 0 0 50px 0;
+        margin: 0;
         border-radius: 10px;
         border: 1px solid #464646;
     }
 }
+#ap-info {
+    padding: 2.5% 5%;
+}
 footer {
+    h2 {
+        font-size: 25px;
+    }
     background-color: #464646;
     color: #f1f1f1;
     #footer-container-outer {
@@ -301,15 +312,32 @@ footer {
             color: black;
             background-color: #f1f1f1;
         }
+        ul {
+            border: 1px solid #f1f1f1;
+            padding: 5px;
+            border-radius: 8px;
+            margin: 5px 0;
+            list-style: none;
+        }
     }
     #footer-contact {
         h2 {
             margin: 0 0 10px 0;
         }
+        a {
+            color: #f1f1f1;
+            text-decoration: underline;
+        }
         height: 100%;
         padding-top: 20px;
         display: flex;
         flex-direction: column;
+        div {
+            border: 1px solid #f1f1f1;
+            padding: 5px;
+            border-radius: 8px;
+            margin: 5px 0;
+        }
     }
 }
 @media only screen and (max-width: 600px) {
@@ -322,6 +350,7 @@ footer {
     }
     #guest_input .form-input-group > div div {
         flex-direction: column;
+        margin-top: 0;
         label {
             width: 100%;
             margin: 10px 0;
