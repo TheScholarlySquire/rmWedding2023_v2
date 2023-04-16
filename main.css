@@ -344,6 +344,9 @@ footer #footer-contact div {
 }
 
 @media only screen and (max-width: 600px) {
+  .hero-nav {
+    align-items: start;
+  }
   #date-place {
     font-size: 25px;
     padding: 5%;
