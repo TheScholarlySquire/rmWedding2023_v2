@@ -320,10 +320,20 @@ footer {
             text-align: right;
         }
     }
-    #footer-container {
-        width: 100%;
+    #guest_input .form-input-group > div div {
         flex-direction: column;
-        margin-bottom: 25px;
+        label {
+            width: 100%;
+            margin: 10px 0;
+        }
+    }
+    #footer-container-outer {
+        padding: 0 5%;
+        #footer-container {
+            width: 100%;
+            flex-direction: column;
+            margin-bottom: 25px;
+        }
     }
     #footer-container > div {
         width: 100%;

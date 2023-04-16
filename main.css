@@ -322,7 +322,17 @@ footer #footer-contact h2 {
   #date-place div:nth-of-type(1) {
     text-align: right;
   }
-  #footer-container {
+  #guest_input .form-input-group > div div {
+    flex-direction: column;
+  }
+  #guest_input .form-input-group > div div label {
+    width: 100%;
+    margin: 10px 0;
+  }
+  #footer-container-outer {
+    padding: 0 5%;
+  }
+  #footer-container-outer #footer-container {
     width: 100%;
     flex-direction: column;
     margin-bottom: 25px;
